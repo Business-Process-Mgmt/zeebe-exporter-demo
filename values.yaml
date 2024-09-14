@@ -1,0 +1,29 @@
+zeebe:
+  image:
+    repository: my-custom-zeebe-image
+    tag: latest
+
+  volumes:
+    - name: zeebe-data
+      persistentVolumeClaim:
+        claimName: zeebe-data-pvc
+    - name: config-volume
+      configMap:
+        name: zeebe-config
+    - name: exporter-config
+      configMap:
+        name: zeebe-exporter-config
+
+  volumeMounts:
+    - name: zeebe-data
+      mountPath: /usr/local/zeebe/data
+    - name: config-volume
+      mountPath: /usr/local/zeebe/config/application.yaml
+      subPath: application.yaml
+    - name: exporter-config
+      mountPath: /usr/local/zeebe/config/exporters.json
+      subPath: exporters.json
+
+  extraEnv:
+    - name: ZEEBE_EXPORTERS
+      value: /usr/local/zeebe/config/exporters.json
