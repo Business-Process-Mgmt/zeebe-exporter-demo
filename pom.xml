@@ -1,17 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.zeebe</groupId>
-  <artifactId>zeebe-exporter-demo</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0.0</version>
-  <name>zeebe-exporter-demo</name>
-  <url>http://maven.apache.org</url>
+
+  <groupId>com.camunda.zeebe</groupId>
+  <artifactId>zeebe-exporter</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>zeebe-exporter</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
   <properties>
-    <java.version>17</java.version>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
   <dependencies>
     <dependency>
@@ -21,41 +23,14 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.16</version>
     </dependency>
     <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
-      <artifactId>okhttp</artifactId>
-      <version>4.9.3</version> <!-- Use the latest version -->
-    </dependency>
-    <dependency>
-      <groupId>io.camunda</groupId>
-      <artifactId>camunda-tasklist-client-java</artifactId>
-      <version>8.5.3.6</version>
-    </dependency>
-    <dependency>
-      <groupId>io.camunda.spring</groupId>
-      <artifactId>java-client-operate</artifactId>
-      <version>8.3.7</version>
-    </dependency>
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20201115</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.sqlserver</groupId>
-      <artifactId>mssql-jdbc</artifactId>
-      <version>12.8.1.jre11</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.34</version>
-      <scope>provided</scope>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.11</version>
     </dependency>
   </dependencies>
   <build>
